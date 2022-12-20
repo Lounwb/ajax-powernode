@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    window.onload = function (){
+        document.getElementById("btn").onclick = function (){
+            var xhr = new XMLHttpRequest()
+            xhr.onreadystatechange = function () {
+                if(xhr.readyState == 4){
+                    if (this.status == 200) {
+                        document.getElementById("mydiv").innerHTML = this.responseText
+                    }else {
+                      alert(this.status)
+                    }
+                }
+            }
+            xhr.open("GET", "/ajax/ajaxrequest2", true)
+            xhr.send()
+        }
+    }
+</script>
+<button id="btn">发送ajax请求</button>
+<div id="mydiv"></div>
+</body>
+</html>

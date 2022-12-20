@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/ajax/ajax.iml" filepath="$PROJECT_DIR$/ajax/ajax.iml" />
       <module fileurl="file://$PROJECT_DIR$/ajax-powernode.iml" filepath="$PROJECT_DIR$/ajax-powernode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/old-request/old-request.iml" filepath="$PROJECT_DIR$/old-request/old-request.iml" />
     </modules>
   </component>
 </project>
