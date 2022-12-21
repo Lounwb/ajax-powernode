@@ -1,4 +1,4 @@
-package com.lounwb.ajax;
+package com.lounwb.ajax.servlet;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -9,14 +9,15 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/ajaxrequest2")
-public class AjaxRequest2Servlet extends HttpServlet {
+@WebServlet("/ajaxrequest3")
+public class AjaxRequest3Servlet extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=utf-8");
         PrintWriter out = response.getWriter();
-        out.print("<font color='red'>对不起,用户名已存在</font>");
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        out.print("用户名:"+username+",密码:"+password);
     }
-
 }

@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ajax/ajax.iml" filepath="$PROJECT_DIR$/ajax/ajax.iml" />
       <module fileurl="file://$PROJECT_DIR$/ajax-powernode.iml" filepath="$PROJECT_DIR$/ajax-powernode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fastjson/fastjson.iml" filepath="$PROJECT_DIR$/fastjson/fastjson.iml" />
       <module fileurl="file://$PROJECT_DIR$/old-request/old-request.iml" filepath="$PROJECT_DIR$/old-request/old-request.iml" />
     </modules>
   </component>

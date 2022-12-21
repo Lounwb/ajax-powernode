@@ -1,4 +1,4 @@
-package com.lounwb.ajax;
+package com.lounwb.ajax.servlet;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

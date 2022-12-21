@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON</title>
+</head>
+<body>
+<script type="text/javascript">
+    var jsonStr = "{\"username\":\"lisi\"}"
+    var jsonObj = new JSON.parse(jsonStr)
+    window.onload = function () {
+        window.alert(jsonObj.username)
+    }
+</script>
+</body>
+</html>
