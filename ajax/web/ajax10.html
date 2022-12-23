@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>手写jQuery</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    function jQuery(selector) {
+
+        if (typeof selector == "string") {
+            if (selector.charAt(0) == "#") {
+
+                domObj = document.getElementById(selector.substring(1))
+
+                return new jQuery()
+            }
+        }else if (typeof selector == "function") {
+            window.onload = selector
+        }
+
+        this.html = function (htmlStr){
+            domObj.innerHTML = htmlStr
+        }
+        this.click = function (func) {
+            domObj.onclick = func
+        }
+        this.val = function (v){
+            if (v == undefined) {
+                return domObj.value
+            }
+            domObj.value = v
+        }
+    }
+
+    $ = jQuery
+
+    $(function () {
+        $("#btn").click(function () {
+            $("#div1").html("<font color='red'>用户名不可用</font>")
+            var username = $("#username").val()
+            alert(username)
+            $("#username").val("hehe")
+        })
+    })
+
+</script>
+
+用户名：<input type="text" id="username">
+
+<button id="btn">显示</button>
+
+<div id="div1"></div>
+
+
+</body>
+</html>

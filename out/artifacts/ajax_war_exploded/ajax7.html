@@ -2,15 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>JSON</title>
+    <title>显示学员列表</title>
 </head>
 <body>
+
 <script type="text/javascript">
-    var jsonStr = "{\"username\":\"lisi\"}"
-    var jsonObj = new JSON.parse(jsonStr)
     window.onload = function () {
-        window.alert(jsonObj.username)
+        document.getElementById("btn").onclick = function () {
+            //console.log("正在发送ajax请求")
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if(this.readyState == 4){
+                    if (this.status == 200) {
+                        //document.getElementById("stubody").innerHTML = this.responseText
+                        var stuList = JSON.parse(this.responseText)
+
+                        var html =""
+                        for (var i = 0; i < stuList.length; i++) {
+                            var stu = stuList[i]
+                            html += "<tr>"
+                            html += "<th>"+(i+1)+"</th>"
+                            html += "<th>"+stu.name+"</th>"
+                            html += "<th>"+stu.age+"</th>"
+                            html += "<th>"+stu.addr+"</th>"
+                            html += "</tr>"
+                        }
+                        document.getElementById("stubody").innerHTML = html
+                    }else {
+                        alert(this.status)
+                    }
+                }
+            }
+            xhr.open("GET", "/ajax/ajaxrequest6", true)
+
+            xhr.send()
+        }
     }
 </script>
+<button id="btn">显示内容</button>
+<table width="50%" border="1px">
+    <thead>
+    <tr>
+        <th>序号</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>住址</th>
+    </tr>
+    </thead>
+    <tbody id="stubody">
+
+    </tbody>
+</table>
 </body>
 </html>

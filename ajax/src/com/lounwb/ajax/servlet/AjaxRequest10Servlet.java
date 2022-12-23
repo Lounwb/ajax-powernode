@@ -9,14 +9,14 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/ajaxrequest5")
-public class AjaxRequest5Servlet extends HttpServlet {
+@WebServlet("/ajaxrequest10")
+public class AjaxRequest10Servlet extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=utf-8");
         PrintWriter out = response.getWriter();
-        String json = "[{\"name\":\"zhangsan\", \"age\":20,\"addr\":\"beijing\"},{\"name\":\"lisi\", \"age\":15,\"addr\":\"shanghai\" }]";
-        out.print(json);
+        String username = request.getParameter("username");
+        out.print("{\"username\":"+username+"}");
     }
 }
